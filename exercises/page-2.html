@@ -5,6 +5,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Purple Rain</title>
     <meta name="description" content="A basic web page containing some text from Wikipedia about the 1983-recorded song Purple Rain by Prince">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style type="text/tailwindcss">
+        body { @apply bg-purple-800 }
+
+        header {
+            @apply pt-8 px-[9%] pb-[42px] md:py-[3%] md:px-[20%];
+        }
+
+        header h1 {
+            @apply text-6xl md:text-8xl font-serif text-center tracking-widest text-white;
+        }
+
+        section {
+            @apply pt-8 px-[9%] pb-[42px] md:py-[3%] md:px-[20%];
+        }
+
+        section h2 {
+            @apply mt-8 text-3xl md:text-4xl font-serif tracking-wide uppercase font-bold text-white;
+        }
+
+        section p {
+            @apply mb-4 text-base md:text-lg leading-9 text-white;
+        }
+
+        a { @apply text-white }
+    </style>
 </head>
 <body>
     <header>
