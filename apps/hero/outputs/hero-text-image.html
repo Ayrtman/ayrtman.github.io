@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hero Section</title>
+  <meta name="description" content="Short, unique description of web page. Often used as the snippet shown in search results. About 120 characters is ideal.">
+
+  <link rel="preload" as="image" href="assets/img/hero-image.jpg">
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+  <style type="text/tailwindcss">
+    @source inline("bg-{slate,gray,zinc,neutral,stone,red,orange,amber,yellow,lime,green,emerald,teal,cyan,sky,blue,indigo,violet,purple,fuchsia,pink,rose}-{50,100,200,300,400,500,600,700,800,900,950} bg-black bg-white");
+
+    .hero {
+      @apply relative isolate flex flex-col justify-center
+             px-6 py-16 md:px-12 md:py-24;
+      overflow: hidden;
+      overflow-wrap: anywhere;
+    }
+
+    .hero-image-background {
+      @apply absolute inset-0;
+      z-index: 0;
+      background-image: url("outputs/assets/img/hero-image.jpg");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      pointer-events: none;
+    }
+
+    .hero-overlay {
+      @apply absolute inset-0;
+      z-index: 1;
+      background-color: var(--color-black);
+      background-image: none;
+      opacity: 0.4;
+      pointer-events: none;
+    }
+
+    .hero-content {
+      @apply relative z-10 w-full max-w-6xl mx-auto;
+      min-width: 0;
+    }
+
+    .hero h1 {
+      @apply max-w-4xl text-4xl md:text-6xl
+             font-bold leading-tight font-sans
+             text-shadow-lg/30;
+    }
+
+    .hero h2 {
+      @apply max-w-3xl mt-6 md:mt-8
+             text-lg md:text-2xl leading-relaxed
+             font-sans text-shadow-lg/30;
+    }
+
+    .hero-h1-serif h1 {
+      @apply font-serif;
+    }
+
+    .hero-h2-serif h2 {
+      @apply font-serif;
+    }
+
+    .hero-centre {
+      @apply text-center;
+    }
+
+    .hero-centre h1,
+    .hero-centre h2 {
+      @apply mx-auto;
+    }
+
+    .hero-min-height {
+      @apply min-h-[480px] md:min-h-[85vh];
+    }
+
+    .hero h2[hidden] {
+      display: none;
+    }
+  </style>
+  <style>
+    .hero h1 {
+      letter-spacing: -0.010em;
+    }
+
+    .hero h2 {
+      letter-spacing: 0.035em;
+    }
+</style>
+  <style>
+    .hero-image-background {
+      background-image: url("assets/img/hero-image.jpg");
+    }
+
+    .hero-overlay {
+      background-color: var(--color-black);
+      background-image: none;
+      opacity: 0.4;
+    }
+
+    .hero h1 {
+      color: var(--color-white);
+    }
+
+    .hero h2 {
+      color: var(--color-white);
+    }
+</style>
+</head>
+<body>
+  <header class="hero hero-centre hero-min-height hero-h1-serif">
+    <div class="hero-image-background" aria-hidden="true"></div>
+    <div class="hero-overlay" aria-hidden="true"></div>
+    <div class="hero-content">
+      <h1>Rise And Shine Mr Freeman</h1>
+      <h2>Not that I... wish to imply you have been sleeping on the job. No one is more deserving of a rest, and all the effort in the world would have gone to waste... until, well, lets just say your hour has come again.</h2>
+    </div>
+  </header>
+</body>
+</html>
